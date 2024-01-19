@@ -39,7 +39,7 @@ class Vocoder(nn.Module):
             if not spkr:
                 spkr = -1
             spkr = spkr_list[0] if spkr == -1 else spkr
-            x["spkr"] = torch.tensor([[spkr]])
+            x["spkr"] = torch.Tensor(spkr).unsqueeze(-1)
         else:
             x["spkr"] = spkr
         x["lang"] = torch.tensor([[lang_idx]])

@@ -115,6 +115,7 @@ class CodeGenerator(Generator):
 
     def forward(self, sample: Dict[str, Any], dur_prediction: bool) -> Tensor:  # type: ignore
         x = sample["code"].clone().to(device=self.dict.weight.device)
+        print("shape of code ", x.shape)
         x = self.dict(x).transpose(1, 2)
 
         if self.dur_predictor and dur_prediction:

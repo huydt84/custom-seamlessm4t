@@ -1,6 +1,8 @@
+torchaudio==2.0.2
+torchvision==0.15.2
 pre-commit
 datasets
-torchaudio
 soundfile
 librosa
-fairseq2==0.1.*
+fairseq2==0.1.0
+librosa

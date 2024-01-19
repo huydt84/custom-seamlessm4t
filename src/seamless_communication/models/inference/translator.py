@@ -241,7 +241,9 @@ class Translator(nn.Module):
         unit_out = result[1]
         if output_modality == Modality.TEXT:
             return text_out.sentences[0], None, None
-        else:
+        else:              
             units = unit_out.units[:, 1:][0].cpu().numpy().tolist()
-            wav_out = self.vocoder(units, tgt_lang, spkr, dur_prediction=True)
+            print(units.shape)
+            print(units) 
+            wav_out = self.vocoder(units, tgt_lang, spkr, dur_prediction=False)
             return text_out.sentences[0], wav_out, sample_rate

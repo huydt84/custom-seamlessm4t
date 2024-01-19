@@ -57,7 +57,7 @@ class Modality(Enum):
     TEXT = "text"
 
 
-class Translator(nn.Module):
+class CustomTranslator(nn.Module):
     def __init__(
         self,
         model_name_or_card: Union[str, AssetCard],

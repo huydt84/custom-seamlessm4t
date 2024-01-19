@@ -28,7 +28,7 @@ class Vocoder(nn.Module):
         dur_prediction: bool = False,
     ) -> Tensor:
         x = {
-            "code": torch.LongTensor(code).view(1, -1),
+            "code": torch.LongTensor(code).view(1, -1).to("cuda:0"),
         }
         print(self.lang_spkr_idx_map)
         print(lang)
@@ -41,8 +41,8 @@ class Vocoder(nn.Module):
             spkr = spkr_list[0] if spkr == -1 else spkr
             x["spkr"] = torch.Tensor(spkr).unsqueeze(-1)
         else:
-            x["spkr"] = spkr
-        x["lang"] = torch.tensor([[lang_idx]])
+            x["spkr"] = torch.Tensor(spkr).unsqueeze(-1).to("cuda:0")
+        x["lang"] = torch.tensor([[lang_idx]]).to("cuda:0")
         return self.code_generator(x, dur_prediction)
 
 LANGUAGE_CODE = {

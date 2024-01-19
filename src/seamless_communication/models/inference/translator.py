@@ -243,7 +243,7 @@ class Translator(nn.Module):
             return text_out.sentences[0], None, None
         else:              
             units = unit_out.units[:, 1:][0].cpu().numpy().tolist()
-            print(units.shape)
+            print(len(units))
             print(units) 
             wav_out = self.vocoder(units, tgt_lang, spkr, dur_prediction=False)
             return text_out.sentences[0], wav_out, sample_rate

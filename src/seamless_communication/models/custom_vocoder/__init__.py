@@ -11,10 +11,8 @@ from seamless_communication.models.custom_vocoder.builder import VocoderConfig a
 from seamless_communication.models.custom_vocoder.builder import (
     CodeGenerator as CodeGenerator,
 )
-from seamless_communication.models.custom_vocoder.builder import Generator as Generator
-from seamless_communication.models.custom_vocoder.builder import VocoderLoader as VocoderLoader
-from seamless_communication.models.custom_vocoder.builder import (
-    load_vocoder_model as load_vocoder_model,
+
+from seamless_communication.models.custom_vocoder.vocoder import (
+    init_vocoder as init_vocoder,
+    Vocoder as Vocoder 
 )
-from seamless_communication.models.custom_vocoder.builder import Vocoder as Vocoder
-from seamless_communication.models.custom_vocoder.vocoder import init_vocoder as init_vocoder 

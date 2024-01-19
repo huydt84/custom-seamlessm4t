@@ -1,8 +1,8 @@
-from encoder.params_data import *
+from seamless_communication.models.encoder.params_data import *
 from seamless_communication.models.encoder.model_ecapa_tdnn import SpeakerEncoder
-from encoder.audio import preprocess_wav   # We want to expose this function from here
+from seamless_communication.models.encoder.audio import preprocess_wav   # We want to expose this function from here
 from matplotlib import cm
-from encoder import audio
+from seamless_communication.models.encoder import audio
 from pathlib import Path
 import numpy as np
 import torch

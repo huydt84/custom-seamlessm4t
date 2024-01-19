@@ -11,7 +11,7 @@ import torch.nn as nn
 from torch import Tensor
 from torch.nn import Dropout
 
-from seamless_communication.models.custom_vocoderr.hifigan import Generator
+from seamless_communication.models.custom_vocoder.hifigan import Generator
 
 
 class VariancePredictor(nn.Module):

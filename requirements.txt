@@ -6,3 +6,4 @@ soundfile
 librosa
 fairseq2==0.1.0
 librosa
+webrtcvad

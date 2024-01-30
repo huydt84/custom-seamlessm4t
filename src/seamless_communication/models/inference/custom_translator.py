@@ -65,7 +65,7 @@ class CustomTranslator(nn.Module):
         device: Device,
         dtype: DataType = torch.float16,
         encoder_path: str = "src/seamless_communication/checkpoints/encoder.pt",
-        vocoder_path: str = "src/seamless_communication/checkpoints/custom_vocoder"
+        vocoder_path: str = "/content/drive/MyDrive/voice-cloning-hifigan/checkpoints/8/g_00001600"
     ):
         super().__init__()
         # Load the model.

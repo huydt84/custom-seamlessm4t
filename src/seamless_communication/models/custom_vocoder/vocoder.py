@@ -41,8 +41,10 @@ class Vocoder(nn.Module):
             spkr = spkr_list[0] if spkr == -1 else spkr
             x["spkr"] = torch.Tensor(spkr).unsqueeze(-1)
         else:
+            print("Custom!")
             x["spkr"] = torch.Tensor(spkr).unsqueeze(-1).to("cuda:0")
         x["lang"] = torch.tensor([[lang_idx]]).to("cuda:0")
+        print(x["code"].shape, x["spkr"].shape, x["lang"].shape)
         return self.code_generator(x, dur_prediction)
 
 LANGUAGE_CODE = {
